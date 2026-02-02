@@ -1,5 +1,20 @@
 # core/risk_utils.py
 
+
+SUPPORTED_DISEASES = [
+    "diabetes",
+    "hypertension",
+    "heart_disease"
+]
+
+def get_features_for_disease(disease: str):
+    feature_map = {
+        "diabetes": ["age", "bmi", "glucose", "blood_pressure"],
+        "hypertension": ["age", "systolic_bp", "diastolic_bp"],
+        "heart_disease": ["age", "cholesterol", "smoking"]
+    }
+    return feature_map.get(disease, [])
+
 def get_risk_ui(risk_level):
     risk_level = str(risk_level).lower()
 

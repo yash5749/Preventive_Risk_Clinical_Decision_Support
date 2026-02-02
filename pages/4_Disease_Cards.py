@@ -1,5 +1,5 @@
 import streamlit as st
-from ml.schema import SUPPORTED_DISEASES, get_features_for_disease
+from src.core.risk_utils import SUPPORTED_DISEASES, get_features_for_disease
 
 st.set_page_config(
     page_title="Disease Screening Cards",
