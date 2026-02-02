@@ -1,6 +1,6 @@
 import streamlit as st
 import re
-from ui.styles import apply_styles
+from .styles import apply_styles
 
 from src.core.risk_engine import compute_risk
 from src.core.genai_explainer import explain

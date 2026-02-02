@@ -1,5 +1,5 @@
 import streamlit as st
-from ui.styles import apply_styles
+from .styles import apply_styles
 
 apply_styles()
 

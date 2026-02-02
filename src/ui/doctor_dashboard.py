@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from ui.styles import apply_styles
+from .styles import apply_styles
 
 from src.core.db import get_connection
 from src.core.decision_support import next_steps
