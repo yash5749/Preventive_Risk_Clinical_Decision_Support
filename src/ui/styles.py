@@ -1,82 +1,81 @@
 import streamlit as st
 
+
 def apply_styles():
     st.markdown("""
     <style>
+    /* ---------------- FONT ---------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-    /* ================= BASE ================= */
-    html, body {
-        background-color: #f8fafc;
-        font-family: 'Inter', sans-serif;
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif !important;
     }
 
-    * {
-        transition: all 0.25s ease-in-out;
-    }
 
-    /* ================= NAVBAR ================= */
-    .navbar {
-        background: linear-gradient(90deg, #2563eb, #1e40af);
-        padding: 16px 24px;
-        border-radius: 14px;
-        color: white;
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 24px;
-        box-shadow: 0 10px 30px rgba(37,99,235,0.35);
-    }
-
-    /* ================= CARDS ================= */
+    /* ---------------- MAIN CARD ---------------- */
     .card {
-        background: white;
-        padding: 22px;
-        border-radius: 16px;
-        margin-bottom: 20px;
-        box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-        animation: fadeIn 0.4s ease-in;
+        font-family: 'Inter', sans-serif !important;
+        background: #ffffff !important;
+        padding: 35px !important;
+        border-radius: 18px !important;
+
+        /* Stronger shadow */
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important;
+
+        /* Prevent full-width stretching */
+        max-width: 900px !important;
+        margin: 0 auto !important;
     }
 
-    .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+    .card b {
+        color: #111827 !important;
     }
 
-    /* ================= HEADERS ================= */
-    .section-title {
-        font-size: 20px;
-        font-weight: 700;
-        color: #1f2937;
-        margin-bottom: 14px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    /* ---------------- HEADINGS ---------------- */
+    .card h1 {
+        font-size: 34px !important;
+        font-weight: 700 !important;
+        color: #111827 !important;
+        margin-bottom: 12px !important;
     }
 
-    /* ================= BUTTONS ================= */
-    .stButton > button {
-        background: linear-gradient(90deg, #2563eb, #1e40af);
-        color: white;
-        border-radius: 14px;
-        padding: 12px 22px;
-        font-weight: 600;
-        border: none;
-        box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+
+    /* ---------------- PARAGRAPHS ---------------- */
+    .card p {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        color: #374151 !important;
+        margin: 8px 0 !important;
     }
 
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 14px 30px rgba(37,99,235,0.55);
+    
+    /* ---------------- HR LINE ---------------- */
+    .card hr {
+        border: none !important;
+        height: 1px !important;
+        background: #e5e7eb !important;
+        margin: 18px 0 !important;
     }
 
-    /* ================= RISK COLORS ================= */
-    .low { border-left: 6px solid #22c55e; }
-    .medium { border-left: 6px solid #f97316; }
-    .high { border-left: 6px solid #ef4444; }
 
-    /* ================= ANIMATIONS ================= */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+    /* ---------------- FOOTER TEXT ---------------- */
+    .footer-text {
+        margin-top: 35px !important;
+        text-align: center !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        color: #9ca3af !important;
+    }
+
+
+    /* ---------------- BUTTONS ---------------- */
+    div.stButton > button {
+        width: 100% !important;
+        border-radius: 14px !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        padding: 12px !important;
     }
 
     </style>
