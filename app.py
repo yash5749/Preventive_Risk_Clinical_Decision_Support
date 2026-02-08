@@ -1,4 +1,8 @@
 import streamlit as st
+from src.ui.styles import apply_styles
+
+apply_styles()   # MUST be first
+
 
 # ----------------------------
 # STREAMLIT CONFIG (🔥 MUST BE FIRST)

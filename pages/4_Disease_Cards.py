@@ -18,35 +18,68 @@ if "selected_disease" not in st.session_state:
 # ---------------- DISEASE CARDS ----------------
 st.subheader("📋 Select Disease")
 
+# Add card CSS once (uses your existing Inter font)
+st.markdown("""
+<style>
+.disease-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: all 0.25s ease;
+    min-height: 150px;
+}
+
+.disease-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    border-color: #2563eb;
+}
+
+.disease-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.disease-card p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 14px;
+}
+</style>
+""", unsafe_allow_html=True)
+
 cols = st.columns(4)
 
 diseases = [
-    ("diabetes", "🟦 Diabetes", "Blood sugar & metabolic risk"),
-    ("hypertension", "🟥 Blood Pressure", "Cardiovascular risk"),
-    ("thyroid", "🟪 Thyroid", "Hormonal imbalance"),
-    ("kidney", "🟫 Kidney", "Renal function risk"),
+    ("diabetes", "🩸 Diabetes", "Blood sugar & metabolic risk"),
+    ("hypertension", "❤️ Hypertension", "Cardiovascular pressure risk"),
+    ("thyroid", "🦋 Thyroid", "Hormonal imbalance screening"),
+    ("kidney", "🫘 Kidney", "Renal function & filtration risk"),
 ]
 
-for col, disease in zip(cols, diseases):
-    key, title, desc = disease
+for col, (key, title, desc) in zip(cols, diseases):
     with col:
+        # Card UI
         st.markdown(
             f"""
-            <div style="
-                border:1px solid #ddd;
-                border-radius:12px;
-                padding:20px;
-                text-align:center;
-                background-color:#fafafa;
-                ">
+            <div class="disease-card">
                 <h3>{title}</h3>
-                <p style="font-size:14px;">{desc}</p>
+                <p>{desc}</p>
             </div>
             """,
             unsafe_allow_html=True
         )
-        if st.button(f"Screen {title}", key=key):
+
+        # Clean button
+        if st.button("Start Screening", key=key):
             st.session_state.selected_disease = key
+            st.rerun()
+
 
 st.divider()
 
